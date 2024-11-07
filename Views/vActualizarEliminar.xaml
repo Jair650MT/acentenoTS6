@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="acentenoS6B.Views.vActualizarEliminar"
+             Title="vActualizarEliminar">
+    <VerticalStackLayout>
+        <Label 
+            Text="Actualizar o Eliminar estudiantes"
+            FontSize="20"
+            
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtCodigo"
+               IsReadOnly="True"/>
+        <Entry x:Name="txtNombre"
+        Placeholder="Ingrese Nombre"/>
+        <Entry x:Name="txtApellido"
+        Placeholder="Ingrese Apellido"/>
+        <Entry x:Name="txtEdad"
+               Placeholder="Ingrese Edad"
+               Keyboard="Numeric"
+               MaxLength="2"/>
+
+        <Button x:Name="btnActualizar"
+                Text="Actualizar"
+                Clicked="btnActualizar_Clicked"/>
+        
+        <Button x:Name="btnEliminar"
+                Text="Eliminar"
+                Clicked="btnEliminar_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
