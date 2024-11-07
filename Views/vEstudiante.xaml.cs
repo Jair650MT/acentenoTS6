@@ -12,13 +12,15 @@ public partial class vEstudiante : ContentPage
 	public vEstudiante()
 	{
 		InitializeComponent();
-	}
+		listar();
+
+    }
 
 	public async void listar()
 	{
 		var content =await cliente.GetStringAsync(Url);
 		List<Models.Estudiante>listEst= JsonConvert.DeserializeObject<List<Estudiante>>(content);
 		estud=new ObservableCollection<Models.Estudiante>(listEst);
-        lvEstudiantes.ItemsSourse=estud;
+        lvEstudiantes.ItemsSource =estud;
 	}
 }

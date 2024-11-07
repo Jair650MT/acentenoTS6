@@ -17,9 +17,9 @@ public partial class vInsertarEstudiante : ContentPage
 			var parametros =new System.Collections.Specialized.NameValueCollection();
 			parametros.Add("nombre",txtNombre.Text);
 			parametros.Add("apellido",txtApellido.Text);
-			parametros.Add("edad",txtEdador.Text);
+			parametros.Add("edad",txtEdad.Text);
 
-			cliente.UploadValues("http://192.168.17.48/estudiantesws/estudiant.php", "POST", parametros);
+			cliente.UploadValues("http://192.168.1.39/estudiantews/post.php", "POST", parametros);
 			Navigation.PushAsync(new vEstudiante());
 
 		}

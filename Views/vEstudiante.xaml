@@ -8,20 +8,21 @@
             Text="semana 6: Ws"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-
-        <ListView x:Name="lvEstudiantes">
+        <ListView x:Name="lvEstudiantes" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding nombre}"/>
-                            <Label Text="{Binding apellido}"/>
-                            <Label Text="{Binding edad}"/>
-                            
-                        </StackLayout>
+                        <Frame Margin="10" Padding="10" BorderColor="Gray" CornerRadius="8">
+                            <Grid ColumnDefinitions="*,*,Auto">
+                                <Label Grid.Column="0" Text="{Binding nombre}" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Grid.Column="1" Text="{Binding apellido}" FontSize="Small" TextColor="Gray"/>
+                                <Label Grid.Column="2" Text="{Binding edad}" FontSize="Small" HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
     </VerticalStackLayout>
 </ContentPage>
