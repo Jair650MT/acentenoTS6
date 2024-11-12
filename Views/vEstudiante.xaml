@@ -5,24 +5,43 @@
              Title="vEstudiante">
     <VerticalStackLayout>
         <Label 
-            Text="semana 6: Ws"
+            Text=".."
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <ListView x:Name="lvEstudiantes" HasUnevenRows="True">
+        <Label 
+     Text="semana 6: Ws"
+     VerticalOptions="Center" 
+     HorizontalOptions="Center" />
+        <ListView x:Name="lvEstudiantes" HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView.Header>
+                <Frame Padding="10" BackgroundColor="LightGray" CornerRadius="8" Margin="10">
+                    <Grid ColumnDefinitions="*,*,*,Auto">
+                        <Label Text="Código" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="0"/>
+                        <Label Text="Nombre" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="1"/>
+                        <Label Text="Apellido" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="2"/>
+                        <Label Text="Edad" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="3"/>
+                    </Grid>
+                </Frame>
+            </ListView.Header>
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Margin="10" Padding="10" BorderColor="Gray" CornerRadius="8">
-                            <Grid ColumnDefinitions="*,*,Auto">
-                                <Label Grid.Column="0" Text="{Binding nombre}" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Grid.Column="1" Text="{Binding apellido}" FontSize="Small" TextColor="Gray"/>
-                                <Label Grid.Column="2" Text="{Binding edad}" FontSize="Small" HorizontalOptions="End"/>
+                        <Frame Margin="10" Padding="10" BorderColor="LightGray" CornerRadius="8" BackgroundColor="White" HasShadow="True">
+                            <Grid ColumnDefinitions="*,*,*,Auto">
+                                <Label Grid.Column="0" Text="{Binding codigo}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                                <Label Grid.Column="1" Text="{Binding nombre}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                                <Label Grid.Column="2" Text="{Binding apellido}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                                <Label Grid.Column="3" Text="{Binding edad}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
                             </Grid>
                         </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+
+
 
     </VerticalStackLayout>
 </ContentPage>
