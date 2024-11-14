@@ -15,11 +15,12 @@
         <ListView x:Name="lvEstudiantes" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.Header>
                 <Frame Padding="10" BackgroundColor="LightGray" CornerRadius="8" Margin="10">
-                    <Grid ColumnDefinitions="*,*,*,Auto">
+                    <Grid ColumnDefinitions="*,*,*,Auto,Auto">
                         <Label Text="Código" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="0"/>
                         <Label Text="Nombre" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="1"/>
                         <Label Text="Apellido" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="2"/>
                         <Label Text="Edad" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="3"/>
+                        <Label Text="Acciones" FontAttributes="Bold" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" Grid.Column="4" Grid.ColumnSpan="2"/>
                     </Grid>
                 </Frame>
             </ListView.Header>
@@ -28,11 +29,19 @@
                 <DataTemplate>
                     <ViewCell>
                         <Frame Margin="10" Padding="10" BorderColor="LightGray" CornerRadius="8" BackgroundColor="White" HasShadow="True">
-                            <Grid ColumnDefinitions="*,*,*,Auto">
+                            <Grid ColumnDefinitions="*,*,*,*,Auto" VerticalOptions="Center">
                                 <Label Grid.Column="0" Text="{Binding codigo}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
                                 <Label Grid.Column="1" Text="{Binding nombre}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
                                 <Label Grid.Column="2" Text="{Binding apellido}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
                                 <Label Grid.Column="3" Text="{Binding edad}" FontSize="Small" TextColor="Gray" HorizontalTextAlignment="Center"/>
+
+                                <!-- Botones de Acción -->
+                                <HorizontalStackLayout Grid.Column="4" HorizontalOptions="End">
+                                    <Button Text="Editar" FontSize="10" Clicked="Button_Editar_Clicked"
+                                    CommandParameter="{Binding .}" WidthRequest="70" Margin="0,0,5,0"/>
+                                    <Button Text="Eliminar" FontSize="10" Clicked="Button_Eliminar_Clicked"
+                                    CommandParameter="{Binding codigo}" WidthRequest="70"/>
+                                </HorizontalStackLayout>
                             </Grid>
                         </Frame>
                     </ViewCell>
@@ -41,6 +50,9 @@
         </ListView>
 
 
+        <Button x:Name="btnInsertar"
+                Text="Insertar nuevo Estudiante"
+                Clicked="btnInsertar_Clicked"/>
 
 
     </VerticalStackLayout>

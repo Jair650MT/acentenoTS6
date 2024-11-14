@@ -19,6 +19,7 @@
                MaxLength="2"/>
 
         <Button x:Name="btnGuardar"
+                Text="Guardar"
                 Clicked="btnGuardar_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
